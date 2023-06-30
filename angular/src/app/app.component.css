@@ -159,3 +159,7 @@ p {
   border-color: #454cad;
   cursor: pointer;
 }
+.custom-font {
+  font-family: 'HandWriting', Arial, sans-serif;
+  font-size: 60px;
+}
