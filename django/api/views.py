@@ -2,6 +2,8 @@ from rest_framework import viewsets
 from django.http import HttpResponse
 from .serializers import BookSerializer
 from .models import Book
+from .ml_utils import process_image
+
 
 class BookViewSet(viewsets.ModelViewSet):
     queryset = Book.objects.all()
@@ -12,3 +14,4 @@ class BookViewSet(viewsets.ModelViewSet):
         title = request.data['title']
         Book.objects.create(title=title, cover=cover)
         return HttpResponse({'message': 'Book created'}, status=200)
+    
