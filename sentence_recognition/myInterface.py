@@ -30,27 +30,24 @@ if __name__ == "__main__":
 
     model = ImageToWordModel(model_path=configs.model_path, char_list=configs.vocab)
 
-    df = pd.read_csv("./sentence_recognition/models/202301131202/val.csv").values.tolist()
 
     accum_cer, accum_wer = [], []
-    for image_path, label in tqdm(df):
-        image = cv2.imread(image_path)
+    image = cv2.imread("C:/Users/tarik/Desktop/IMG_20230701_121241.jpg",cv2.n b )
 
-        prediction_text = model.predict(image)
+    prediction_text = model.predict(image)
 
-        cer = get_cer(prediction_text, label)
-        wer = get_wer(prediction_text, label)
-        print("Image: ", image_path)
-        print("Label:", label)
-        print("Prediction: ", prediction_text)
-        print(f"CER: {cer}; WER: {wer}")
+    cer = get_cer(prediction_text, "Hello wissal")
+    wer = get_wer(prediction_text, "Hello wissal")
+    print("Label:", "Hello wissal")
+    print("Prediction: ", prediction_text)
+    print(f"CER: {cer}; WER: {wer}")
 
-        accum_cer.append(cer)
-        accum_wer.append(wer)
+    accum_cer.append(cer)
+    accum_wer.append(wer)
 
-        cv2.imshow(prediction_text, image)
-        cv2.waitKey(0)
-        cv2.destroyAllWindows()
+    cv2.imshow(prediction_text, image)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
 
     print(f"Average CER: {np.average(accum_cer)}, Average WER: {np.average(accum_wer)}")
     
