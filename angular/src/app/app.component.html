@@ -1,31 +1,9 @@
-<!-- 
-
-<label>
-  Label:
-  <input type="text" (change)="onTitleChanged($event)" />
-</label>
-<br/>
-<label>
-  Image of handwiting :
-  <input type="file" (change)="onImageChanged($event)" />
-</label>
-<br/>
-<button (click)="newBook()">Submit</button>
-
-
--->
-
-
-
-
-<!-- Upload  -->
 <form id="file-upload-form" class="uploader">
   <h2 class="custom-font" style="text-align: center; margin-bottom: 5%;">Handwritten text recognition</h2>
 
   <input id="file-upload" (change)="onImageChanged($event)" type="file" name="fileUpload" accept="image/*" />
 
   <label for="file-upload" id="file-drag">
-    <img id="file-image" src="#" alt="Preview" class="hidden">
     <div id="start">
       <i class="fa fa-download" aria-hidden="true"></i>
       <div>Select a file or drag here</div>
@@ -33,6 +11,13 @@
       <span id="file-upload-btn" class="btn btn-primary">Select a file</span>
     </div>
 
+    <div *ngIf="cover" class="image-preview">
+      <img id="file-image" [src]="imageData" alt="Preview" />
+      <div class="selected-file-name">Selected file: {{ cover.name }}</div>
+    </div>
+
+    Label:
+    <input type="text" (change)="onTitleChanged($event)" />
     <button class="btn btn-primary" (click)="newBook()">Submit</button>
 
     <div id="response" class="hidden">
@@ -42,10 +27,9 @@
       </progress>
     </div>
   </label>
-  
 </form>
 
-
-
-
-
+<div *ngIf="result">
+  <h2>Result</h2>
+  <p>{{ result }}</p>
+</div>

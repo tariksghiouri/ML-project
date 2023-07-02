@@ -2,16 +2,26 @@ from rest_framework import viewsets
 from django.http import HttpResponse
 from .serializers import BookSerializer
 from .models import Book
-from .ml_utils import process_image
+import os
+from PIL import Image
+from django.conf import settings
+from django.http import JsonResponse
+from .ml_utils import predicttext
+import logging
 
 
 class BookViewSet(viewsets.ModelViewSet):
     queryset = Book.objects.all()
     serializer_class = BookSerializer
 
-    def post(self, request, *args, **kwargs):
+    def post(self, request):
         cover = request.data['cover']
         title = request.data['title']
         Book.objects.create(title=title, cover=cover)
-        return HttpResponse({'message': 'Book created'}, status=200)
+        
+        prediction=predicttext()
+        print(prediction)
+        return JsonResponse({'result': "heloooooooooooooo"}, status=200)
+    
+
     

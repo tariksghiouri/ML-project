@@ -32,13 +32,13 @@ if __name__ == "__main__":
 
 
     accum_cer, accum_wer = [], []
-    image = cv2.imread("C:/Users/tarik/Desktop/IMG_20230701_121241.jpg",cv2.n b )
+    image = cv2.imread("C:/Users/tarik/Desktop/Screenshot 2023-07-02 084433.jpg" )
 
     prediction_text = model.predict(image)
 
     cer = get_cer(prediction_text, "Hello wissal")
     wer = get_wer(prediction_text, "Hello wissal")
-    print("Label:", "Hello wissal")
+    print("Label:", "hello Tarik")
     print("Prediction: ", prediction_text)
     print(f"CER: {cer}; WER: {wer}")
 
