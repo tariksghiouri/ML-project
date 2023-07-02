@@ -26,13 +26,14 @@ if __name__ == "__main__":
     import pandas as pd
     from tqdm import tqdm
     from mltu.configs import BaseModelConfigs
-    configs = BaseModelConfigs.load("./sentence_recognition/models/202301131202/configs.yaml")
+    configs = BaseModelConfigs.load("./sentence_recognition/Models/sentence_recognition/202306301934/configs.yaml")
 
     model = ImageToWordModel(model_path=configs.model_path, char_list=configs.vocab)
 
 
     accum_cer, accum_wer = [], []
-    image = cv2.imread("C:/Users/tarik/Desktop/IMG_20230701_121241.jpg",cv2.n b )
+    image = cv2.imread("C:/Users/tarik/Desktop/Screenshot 2023-07-01 233658.png" ,cv2.COLOR_BGR2GRAY)
+    
 
     prediction_text = model.predict(image)
 
