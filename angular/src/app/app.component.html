@@ -1,5 +1,7 @@
+<div class="content-container">
+
 <form id="file-upload-form" class="uploader">
-  <h2 class="custom-font" style="text-align: center; margin-bottom: 5%;">Handwritten text recognition</h2>
+  <h2 class="custom-font clickable" style="text-align: center; margin-bottom: 5%;" (click)="navigateToHomePage()">Handwritten text recognition</h2>
 
   <input id="file-upload" (change)="onImageChanged($event)" type="file" name="fileUpload" accept="image/*" />
 
@@ -28,8 +30,3 @@
     </div>
   </label>
 </form>
-
-<div *ngIf="result">
-  <h2>Result</h2>
-  <p>{{ result }}</p>
-</div>

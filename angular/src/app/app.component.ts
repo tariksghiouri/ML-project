@@ -13,7 +13,9 @@ export class AppComponent {
   imageData: any;
 
   constructor(private http: HttpClient) {}
-
+  navigateToHomePage() {
+    window.location.href = '/';
+  }
   onTitleChanged(event: any) {
     this.title = event.target.value;
   }

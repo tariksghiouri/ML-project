@@ -163,3 +163,14 @@ p {
   font-family: 'HandWriting', Arial, sans-serif;
   font-size: 60px;
 }
+.clickable {
+  cursor: pointer;
+}
+.content-container  {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 60px; /* Adjust this value if necessary */
+}
