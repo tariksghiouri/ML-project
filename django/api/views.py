@@ -14,14 +14,16 @@ class BookViewSet(viewsets.ModelViewSet):
     queryset = Book.objects.all()
     serializer_class = BookSerializer
 
-    def post(self, request):
+    def create(self, request, *args, **kwargs):
         cover = request.data['cover']
         title = request.data['title']
         Book.objects.create(title=title, cover=cover)
         
-        prediction=predicttext()
-        print(prediction)
-        return JsonResponse({'result': "heloooooooooooooo"}, status=200)
+        # Perform any additional logic or computations here
+        result=predicttext("path")
+
+        return JsonResponse({"result": result}, status=201)
+
     
 
     

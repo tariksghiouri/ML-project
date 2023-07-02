@@ -1,18 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { ImageServiceService } from './image-service.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title: string;
   cover: File;
   result: string;
   imageData: any;
 
-  constructor(private http: HttpClient) {}
+  constructor(private iamgeS:ImageServiceService) { }
+  ngOnInit(): void {
+    this.title = "";
+    this.cover = null;
+    this.result = "";
+    this.imageData = null;
+
+  }
   navigateToHomePage() {
     window.location.href = '/';
   }
@@ -32,13 +40,13 @@ export class AppComponent {
   }
 
   newBook() {
+    console.log("newBook called")
     const uploadData = new FormData();
     uploadData.append('title', this.title);
     uploadData.append('cover', this.cover, this.cover.name);
-    this.http.post('http://127.0.0.1:8000/books/', uploadData)
-    .subscribe((data: any)=> {
-      this.result = data.result;
-      console.log(this.result)
-    });
+    this.iamgeS.uploadimage(uploadData).subscribe(data => {
+      console.log(data)
+    })
+    
   }
 }
