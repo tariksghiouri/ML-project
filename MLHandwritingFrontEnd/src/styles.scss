@@ -1,0 +1,25 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: Roboto, sans-serif;
+  background: #2d353c;
+  color: #ccc;
+}
+
+.wrapper {
+  text-align: center;
+
+  .upload-wrapper {
+    display: inline-block;
+    margin: 2rem auto 0; // Centering the upload element
+  }
+}
+
+h1, h2 {
+  color: #fff;
+  text-align: center;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.3em;
+}
