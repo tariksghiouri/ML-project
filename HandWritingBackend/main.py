@@ -49,3 +49,7 @@ async def upload_image(file: UploadFile = File(...)):
     predicttext(save_path)
 
     return {"path": predicttext(save_path), "message": "my message"}
+
+
+
+#  python -m uvicorn main:app --reload

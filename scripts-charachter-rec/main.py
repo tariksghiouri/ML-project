@@ -113,3 +113,16 @@ for i,ax in enumerate(axes):
     ax.set_title("Prediction: "+pred)
     ax.grid()
 plt.show()
+
+img1 = cv2.imread('C:\\Users\\tarik\\ML-project\\ML-project\scripts\\testimage.jpg')
+img1 = cv2.cvtColor(img1, cv2.COLOR_BGR2RGB)
+
+img2 = cv2.imread('C:\\Users\\tarik\\ML-project\\ML-project\scripts\\testimage.jpg')
+img2 = cv2.cvtColor(img2, cv2.COLOR_BGR2RGB)
+
+
+img = np.reshape(img1, (28,28))
+ax.imshow(img, cmap="Greys")   
+pred = word_dict[np.argmax(test_yOHE[i])]
+ax.set_title("Prediction: "+pred)
+ax.grid()
