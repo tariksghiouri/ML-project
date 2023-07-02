@@ -2,7 +2,7 @@ from fastapi import FastAPI, File, UploadFile
 import os
 from starlette.middleware.cors import CORSMiddleware
 
-from ml_utils import predicttext
+from ml_utils import  predicttext
 
 app = FastAPI()
 

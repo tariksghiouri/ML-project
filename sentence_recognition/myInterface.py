@@ -26,7 +26,7 @@ if __name__ == "__main__":
     import pandas as pd
     from tqdm import tqdm
     from mltu.configs import BaseModelConfigs
-    configs = BaseModelConfigs.load("./sentence_recognition/Models/sentence_recognition/202306301934/configs.yaml")
+    configs = BaseModelConfigs.load("./HandWritingBackend/sentence_recognition/Models/sentence_recognition/202306301934/configs.yaml")
 
     model = ImageToWordModel(model_path=configs.model_path, char_list=configs.vocab)
 
