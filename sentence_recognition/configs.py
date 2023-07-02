@@ -6,7 +6,7 @@ from mltu.configs import BaseModelConfigs
 class ModelConfigs(BaseModelConfigs):
     def __init__(self):
         super().__init__()
-        self.model_path = os.path.join("./models/202301131202", datetime.strftime(datetime.now(), "%Y%m%d%H%M"))
+        self.model_path = os.path.join("./Models/sentence_recognition/202306301934", datetime.strftime(datetime.now(), "%Y%m%d%H%M"))
         self.vocab = ""
         self.height = 96
         self.width = 1408
