@@ -9,7 +9,13 @@ import {HandWritingService} from "./services/hand-writing.service";
 export class AppComponent implements OnInit{
   title = 'MLHandwritingFrontEnd';
   imagePath: any;
+
   constructor(private handService:HandWritingService) {
+  }
+    resetForm() {
+    console.log("hello");
+    window.location.reload();
+    
   }
   ngOnInit() {
     this.Init();

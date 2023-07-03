@@ -1,3 +1,11 @@
+
+
+<div class="lines">
+	<div class="line"></div>
+	<div class="line"></div>
+	<div class="line"></div>
+  </div>
+  
 <div class="wrapper">
   <h1>Handwriting Recognition Project</h1>
   <p>By Tarik Idrissi Sghiouri and Wissal Ramchi</p>
@@ -32,4 +40,121 @@
 </div>
 
 
-<p class="my-class" >{{imagePath}}</p>
+
+<button class="btn btn-5 btn-5b icon-remove" (click)="resetForm()"><span>↻</span></button>
+
+<p class="my-class" *ngIf="imagePath">Prediction: {{imagePath}}</p>
+
+<!-- <p class="my-class" >start Ove</p> -->
+
+
+
+
+<style>
+  
+  @font-face {
+	font-family: 'icomoon';
+	src:url('/fonts/icomoon/icomoon.eot');
+	src:url('/fonts/icomoon/icomoon.eot?#iefix') format('embedded-opentype'),
+		url('/fonts/icomoon/icomoon.woff') format('woff'),
+		url('/fonts/icomoon/icomoon.svg#icomoon') format('svg');
+
+}
+
+
+/* General button style (reset) */
+.btn {
+	border: none;
+	font-family: inherit;
+	font-size: inherit;
+	color: inherit;
+	background: none;
+	cursor: pointer;
+	padding: 25px 80px;
+	margin: 15px 108px;
+	
+	letter-spacing: 1px;
+	font-weight: 300;
+	outline: none;
+	position: relative;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+
+/* Pseudo elements for icons */
+
+
+.icon-remove:before {
+	content: "Reset form";
+  font-family: inherit;
+	font-size: 10px;
+	color: inherit;
+}
+/* Button 5 */
+.btn-5 {
+	border-radius: 15px;
+	background: #65cca9 ;
+	color: #fff;
+	height: 40px;
+	min-width: 260px;
+	line-height: 0;
+	font-size: 16px;
+	overflow: hidden;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+
+.btn-5 span {
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	-webkit-transition: all 0.3s;
+	-webkit-backface-visibility: hidden;
+	-moz-transition: all 0.3s;
+	-moz-backface-visibility: hidden;
+	transition: all 0.3s;
+	backface-visibility: hidden;
+}
+
+.btn-5:before {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	line-height: 2.9;
+	font-size: inherit;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+
+
+
+
+
+
+
+/* Button 5b */
+.btn-5b:hover span {
+	-webkit-transform: translateX(200%);
+	-moz-transform: translateX(200%);
+	-ms-transform: translateX(200%);
+	transform: translateX(200%);
+}
+
+.btn-5b:before {
+	left: -100%;
+	top: 0;
+}
+
+.btn-5b:hover:before {
+	left: 0;
+}
+
+
+
+</style>
