@@ -5,6 +5,7 @@
 	<div class="line"></div>
 	<div class="line"></div>
   </div>
+
   
 <div class="wrapper">
   <h1>Handwriting Recognition Project</h1>
@@ -42,8 +43,10 @@
 
 
 <button class="btn btn-5 btn-5b icon-remove" (click)="resetForm()"><span>↻</span></button>
+<p class="my-class" *ngIf="imagePath">Prediction: <span [textContent]="imagePath"></span></p>
+<button class="btn btn-5 btn-5b icon-copy" *ngIf="imagePath" ngxClipboard [cbContent]="imagePath" (cbOnSuccess)="onCopySuccess()" (cbOnError)="onCopyError()" ><span>📋</span></button>
 
-<p class="my-class" *ngIf="imagePath">Prediction: {{imagePath}}</p>
+
 
 <!-- <p class="my-class" >start Ove</p> -->
 
@@ -88,6 +91,12 @@
 
 .icon-remove:before {
 	content: "Reset form";
+  font-family: inherit;
+	font-size: 10px;
+	color: inherit;
+}
+.icon-copy:before {
+	content: "Copy Text";
   font-family: inherit;
 	font-size: 10px;
 	color: inherit;

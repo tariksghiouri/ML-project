@@ -1,5 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {HandWritingService} from "./services/hand-writing.service";
+import { Clipboard } from '@angular/cdk/clipboard';
+
+
 
 @Component({
   selector: 'app-root',
@@ -10,17 +13,32 @@ export class AppComponent implements OnInit{
   title = 'MLHandwritingFrontEnd';
   imagePath: any;
 
-  constructor(private handService:HandWritingService) {
+  constructor(private handService:HandWritingService,private clipboard: Clipboard) {
+   
   }
     resetForm() {
     console.log("hello");
     window.location.reload();
     
   }
+  copyText(textToCopy: string) {
+    console.log(textToCopy);
+    
+    this.clipboard.copy(textToCopy);
+}
   ngOnInit() {
     this.Init();
   }
+  onCopySuccess() {
+    window.alert('copied to Clipboard !');
 
+  }
+
+  onCopyError() {
+    // Logic to handle copy error
+    window.alert('ERROR !');
+
+  }
   Init(){
     const body = document.querySelector('body')!
     const upload = document.querySelector('.upload')!

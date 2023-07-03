@@ -1,3 +1,5 @@
+// @import '~ngx-toastr/toastr.css';
+
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,700");
 
 /* ------------------------------
@@ -272,4 +274,32 @@ display: none;}
   100% {
     top: 110%;
   }
+}
+
+
+/* Custom success toast styles */
+.custom-success-toas {
+  font-size: 11px; /* Adjust the font size as per your preference */
+  max-width: 400px;
+  padding: 6px;
+  background: #65cca9 !important;
+  color: #ffffff !important;
+  font-family: sans-serif;
+  text-align: center;
+  border: 1px solid #aaaaaa;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.custom-success-toast .toast-success {
+  max-width: 400px;
+  padding: 6px;
+  background: #65cca9 !important;
+  color: #ffffff !important;
+  font-family: sans-serif;
+  text-align: center;
+  border: 1px solid #aaaaaa;
+  border-radius: 10%;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
