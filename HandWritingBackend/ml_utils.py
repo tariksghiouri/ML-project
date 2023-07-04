@@ -32,9 +32,10 @@ def predicttext(filename):
     directory="C:\\Users\\tarik\ML-project\\ML-project\\HandWritingBackend"
     imagePath=os.path.join(directory, filename)
     print("\n\n_______________"+ imagePath +"________________\n\n",)
-    configsSmallPc = BaseModelConfigs.load("../HandWritingBackend/models/202301131202/configs.yaml")
-    # configs = BaseModelConfigs.load("../HandWritingBackend/Models/sentence_recognition/202306301934/configs.yaml")
-    model = ImageToWordModel(model_path=configsSmallPc.model_path, char_list=configsSmallPc.vocab)
+    # configsSmallPc = BaseModelConfigs.load("../HandWritingBackend/models/202301131202/configs.yaml")
+    configs = BaseModelConfigs.load("../HandWritingBackend/Models/sentence_recognition/202306301934/configs.yaml")
+    # model = ImageToWordModel(model_path=configsSmallPc.model_path, char_list=configsSmallPc.vocab)
+    model = ImageToWordModel(model_path=configs.model_path, char_list=configs.vocab)
     accum_cer, accum_wer = [], []
     image = cv2.imread(imagePath )
 
