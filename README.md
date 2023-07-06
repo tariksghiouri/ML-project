@@ -12,8 +12,8 @@ Instructions on how to set up the project:
 7. run the back-end using `python -m uvicorn main:app --reload`
 ## Note
 
-so if by the time you're executing this there's no /Models folder don't worry I will upload the the model folder as soon as possible.
-ad for ay other quastion feel free to contact.
+if by the time you're executing this there's no /Models folder don't worry I will upload the the model folder as soon as possible.
+and for any other quastion feel free to contact.
 
 
    
